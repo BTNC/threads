@@ -86,7 +86,7 @@ static int mutex_new(lua_State *L)
     mutex = THMutex_new();
   }
   else if(lua_gettop(L) == 1) {
-    AddressType id = luaL_checkaddr(L, 1);
+    uintptr_t id = luaL_checkaddr(L, 1);
     mutex = THMutex_newWithId(id);
   }
   else
@@ -147,7 +147,7 @@ static int condition_new(lua_State *L)
     condition = THCondition_new();
   }
   else if(lua_gettop(L) == 1) {
-    AddressType id = luaL_checkaddr(L, 1);
+    uintptr_t id = luaL_checkaddr(L, 1);
     condition = THCondition_newWithId(id);
   }
   else

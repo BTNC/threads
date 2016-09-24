@@ -320,7 +320,7 @@ static int queue__newindex(lua_State *L)
 static int queue_id(lua_State *L)
 {
   THQueue *queue = luaTHRD_checkudata(L, 1, "threads.Queue");
-  lua_pushinteger(L, (AddressType)queue);
+  lua_pushinteger(L, (uintptr_t)queue);
   return 1;
 }
 

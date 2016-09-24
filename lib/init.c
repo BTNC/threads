@@ -22,7 +22,7 @@ static void luaL_setfuncs(lua_State *L, const luaL_Reg *l, int nup)
 #define luaL_checkint(L,n)      ((int)luaL_checkinteger(L, (n)))
 #endif
 
-#define luaL_checkaddr(L,n)     ((AddressType)luaL_checkinteger(L, (n)))
+#define luaL_checkaddr(L,n)     ((uintptr_t)luaL_checkinteger(L, (n)))
 
 #include "threads.c"
 #include "queue.c"
